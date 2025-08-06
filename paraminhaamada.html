@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>meu xuxuzinho de meudeus</title>
+    <style>
+      body {
+        height: 100vh;
+        background: linear-gradient(120deg, #beff3bd8, #cbe978da);
+        font: normal 20pt Arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        position: relative;
+      }
+
+      .blocao {
+        width: 1000px;
+        height: 600px;
+        background-image: linear-gradient(
+          to right,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          violet
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+        border-radius: 7px;
+        letter-spacing: 3px;
+      }
+
+      .blocao #namorada {
+        font-size: 40px;
+        color: rgb(220, 224, 19);
+        background-color: transparent;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+        border-radius: 7px;
+        letter-spacing: 3px;
+        text-align: center;
+      }
+
+      .blocao #namorada h2 {
+        color: white;
+        font-size: 10px;
+      }
+
+      .blocao #mensagem p {
+        background-color: rgba(0, 0, 0, 0.582);
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);
+        border-radius: 7px;
+        letter-spacing: 3px;
+        padding: 10px;
+      }
+
+      #imagem-surpresa {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        display: none;
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      }
+
+      #mensagem-beijo {
+        position: fixed;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        color: #ff0000;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+          0 0 40px #e60073;
+        z-index: 1001;
+        display: none;
+        text-align: center;
+        animation: pulsar 1s infinite alternate;
+      }
+
+      @keyframes pulsar {
+        from {
+          transform: translate(-50%, -50%) scale(1);
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+            0 0 40px #e60073;
+        }
+        to {
+          transform: translate(-50%, -50%) scale(1.1);
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6;
+        }
+      }
+      #player-musica {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1002;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #controles-musica button {
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #00e6b8;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      #controles-musica button:hover {
+        background-color: #00e6b8;
+      }
+
+      #status-musica {
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="blocao">
+      <div id="namorada">
+        <h1>MINHA PRINCESA</h1>
+        <h2>de meudeus</h2>
+      </div>
+
+      <div id="mensagem">
+        <p>AGORA VOCÊ ESTÁ PRESA A MIM PARA TODA ETERNIDADE</p>
+      </div>
+    </div>
+
+    <!-- Imagem que será mostrada após 3 segundos -->
+    <img id="imagem-surpresa" alt="Surpresa!" />
+
+    <!-- Mensagem de aniversário que aparecerá depois -->
+    <div id="mensagem-beijo">FELIZ 2 ANOS DE BEIJO NA BOCA!</div>
+
+    <!-- Player de música -->
+    <div id="player-musica">
+      <div id="controles-musica">
+        <button id="play-btn">▶</button>
+        <button id="pause-btn">⏸</button>
+        <button id="stop-btn">⏹</button>
+      </div>
+      <span id="status-musica">Música: Carregando...</span>
+    </div>
+
+    <audio id="musica" loop>
+      <audio id="musica" loop>
+        <source src="https://raw.githubusercontent.com/marianne-dnts/amorzinhobeijo/main/Diga Sim pra Mim.mp3" type="audio/mpeg">
+      </audio>
+
+      Seu navegador não suporta áudio.
+    </audio>
+
+    <script>
+      // Alertas iniciais (mantenha os que você já tem)
+      window.alert("ALERTA!!!!!!!! TALVEZ ISSO SEJA UM VÍRUS");
+      window.confirm("Pode apertar em cancelar se você não me ama ou em confirmar se você tiver coragem");
+      window.prompt("Você aceitaria passar o resto da vida beijando a minha boca?");
+      window.alert("Não importa o que digitou, você não viu que isso pode ser um vírus???!!!");
+
+      // Configuração da música (VERSÃO GITHUB)
+      const musica = document.getElementById("musica");
+      musica.volume = 0.7;
+      
+      // Controles 100% funcionais
+      document.getElementById("play-btn").addEventListener("click", () => {
+        musica.play()
+          .then(() => document.getElementById("status-musica").textContent = "Tocando: Diga sim pra mim")
+          .catch(e => console.log("Erro ao tocar:", e));
+      });
+
+      document.getElementById("pause-btn").addEventListener("click", () => {
+        musica.pause();
+        document.getElementById("status-musica").textContent = "Pausado";
+      });
+
+      document.getElementById("stop-btn").addEventListener("click", () => {
+        musica.pause();
+        musica.currentTime = 0;
+        document.getElementById("status-musica").textContent = "Parado";
+      });
+
+      // Autoplay após interação com os alerts
+      setTimeout(() => {
+        musica.play()
+          .then(() => document.getElementById("status-musica").textContent = "Tocando: Diga sim pra mim")
+          .catch(e => console.log("Autoplay bloqueado (clique em ▶)"));
+      }, 1000);
+
+      // (Mantenha o restante do seu script para imagens/mensagens)
+      setTimeout(() => {
+        const img = document.getElementById("imagem-surpresa");
+        img.src = "https://i.pinimg.com/736x/5e/e2/df/5ee2df30d63e1e5d0679bae3a889e29f.jpg";
+        img.style.display = "block";
+
+        setTimeout(() => {
+          img.style.display = "none";
+          document.getElementById("mensagem-beijo").style.display = "block";
+          
+          setTimeout(() => {
+            document.getElementById("mensagem-beijo").style.display = "none";
+          }, 5000);
+        }, 3000);
+      }, 3000);
+    </script>
+</body>
+</html>
+    </script>
+  </body>
+</html>
